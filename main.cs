@@ -1,6 +1,7 @@
 using System;
 
-class MainClass {
+class MainClass { 
   public static void Main (string[] args) {
+    Grid grid = new Grid();
   }
 }
