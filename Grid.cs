@@ -15,4 +15,7 @@ public class Grid {
   public void setCell(int xPos, int yPos, bool isAlive) {
     this.board[xPos, yPos].alive = isAlive;
   }
+
+  
+
 }
