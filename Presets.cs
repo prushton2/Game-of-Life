@@ -1,4 +1,6 @@
+using System;
 class Presets {
+  Random gen = new Random();
   private Grid grid;
   public Presets(Grid grid) {
     this.grid = grid;
@@ -28,5 +30,13 @@ class Presets {
     grid.setCell(yoffset+0, xoffset+1, true);
     grid.setCell(yoffset+0, xoffset+2, true);
     grid.setCell(yoffset+1, xoffset+1, true);
+  }
+
+  public void random(int xoffset, int yoffset, int xsize, int ysize) {
+    for(int i = 0; i<xsize; i++) {
+      for(int j = 0; j<ysize; j++) {
+        grid.setCell(yoffset+j, xoffset+i, gen.Next(100) <= 40);
+      }
+    }
   }
 }

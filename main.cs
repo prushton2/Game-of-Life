@@ -10,12 +10,11 @@ class MainClass {
     int AutoTick = 750; // Automatically advance the generation every set period of time. Setting it to 0 requires manual input.
 
     //Create a pattern here. Origin is top left.
-    prst.pentadecathlon(10, 10);
-    
+    // prst.pentadecathlon(10, 10);
+    prst.random(0, 0, 36, 36);
 
 
     display.show();
-    // Console.WriteLine(grid.getAdjacent(1, 1, true));
     while(true) {
       if(AutoTick == 0) {
         Console.ReadLine();
@@ -41,8 +40,6 @@ class MainClass {
       display.show();
     
     }
-
-    // Console.WriteLine(grid.getAdjacent(1, 1, true));
 
   }
 }
