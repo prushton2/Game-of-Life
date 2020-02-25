@@ -1,15 +1,18 @@
 using System;
-class Grid {
-  public Cell[,] gameBoard = new Cell[10,10];
-  
-  public Grid() {}
 
-  public bool setCell(int xPos, int yPos, bool isAlive) {
-    if(gameBoard[xPos, yPos].alive == isAlive) {
-      return false;
-    } else {
-      gameBoard[xPos, yPos].alive = isAlive;
-      return true;
+public class Grid {
+  
+  public Cell[,] board = new Cell[10,10];
+
+  public Grid() {
+    for(int i =0; i<board.GetLength(0); i++) {
+      for(int j =0; j<board.GetLength(0); j++) {
+        board[i, j] = new Cell();
+      }
     }
+  }
+
+  public void setCell(int xPos, int yPos, bool isAlive) {
+    this.board[xPos, yPos].alive = isAlive;
   }
 }
