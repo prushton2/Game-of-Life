@@ -14,6 +14,7 @@ public class Grid {
 
   public void setCell(int xPos, int yPos, bool isAlive) { //Made as a shorthand method to set the array value
     this.board[xPos, yPos].alive = isAlive;
+    this.board[xPos, yPos].nextState = isAlive;
   }
 
   public int getAdjacent(int xPos, int yPos, bool isAlive) { //This method looks for all squares with the given life value in a 3x3 around the position
@@ -32,6 +33,22 @@ public class Grid {
       }
     }
     return counter;
+  }
+
+  public bool getFutureState(int xPos, int yPos) {
+    int neighbors = this.getAdjacent(xPos, yPos, true);
+    if(neighbors < 3) {  
+      return false;
+    }
+    else if(neighbors == 2 || neighbors == 3 && board[xPos, yPos].alive) {
+      return true;
+    }
+    else if(neighbors == 3 && !board[xPos, yPos].alive) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
 }
