@@ -2,15 +2,18 @@ using System;
 
 class MainClass { 
   public static void Main (string[] args) {
-    Grid theGrid = new Grid();
-    Display display = new Display(theGrid);
+    Grid grid = new Grid();
+    Display display = new Display(grid);
 
-    theGrid.setCell(0, 0, true);
-    theGrid.setCell(0, 1, true);
-    theGrid.setCell(0, 9, true);
+    grid.setCell(3, 3, true);
+    grid.setCell(4, 4, true);
+    grid.setCell(5, 5, true);
+    grid.setCell(6, 6, true);
 
 
     display.show();
+
+    Console.WriteLine(grid.getAdjacent(1, 1, true));
 
   }
 }

@@ -20,5 +20,6 @@ public class Display { //Displays the grid in the console.
         Console.Write("-+");
       }
     }
+    Console.Write("\n");
   }
 }
