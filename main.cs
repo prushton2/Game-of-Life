@@ -10,8 +10,7 @@ class MainClass {
     int AutoTick = 750; // Automatically advance the generation every set period of time. Setting it to 0 requires manual input.
 
     //Create a pattern here. Origin is top left.
-    prst.t(10, 10);
-    prst.t(10, 19);
+    prst.pentadecathlon(10, 10);
     
 
 
