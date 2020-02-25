@@ -1,23 +1,29 @@
 using System;
+using System.Threading;
 
 class MainClass { 
   public static void Main (string[] args) {
     Grid grid = new Grid();
     Display display = new Display(grid);
-//Create a pattern here. Origin is top left.
+    Presets prst = new Presets(grid);
 
-    grid.setCell(5, 4, true);
-    grid.setCell(5, 5, true);
-    grid.setCell(5, 6, true);
-    grid.setCell(4, 5, true);
+    int AutoTick = 750; // Automatically advance the generation every set period of time. Setting it to 0 requires manual input.
 
+    //Create a pattern here. Origin is top left.
+    prst.t(10, 10);
+    prst.t(10, 19);
     
+
 
     display.show();
     // Console.WriteLine(grid.getAdjacent(1, 1, true));
     while(true) {
-      Console.ReadLine();
-      Cell[,] board2 = new Cell[10,10];
+      if(AutoTick == 0) {
+        Console.ReadLine();
+      } else {
+        Thread.Sleep(AutoTick);
+      }
+      Cell[,] board2 = new Cell[36,36];
 
       for(int i =0; i<board2.GetLength(0); i++) {
         for(int j =0; j<board2.GetLength(0); j++) {
@@ -33,7 +39,6 @@ class MainClass {
         }
       }
       grid.board = board2;
-      Console.WriteLine("////////////////////////////////");
       display.show();
     
     }

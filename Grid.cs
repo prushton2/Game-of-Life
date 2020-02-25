@@ -2,8 +2,7 @@ using System;
 
 public class Grid {
   
-  public Cell[,] board = new Cell[10,10];
-
+  public Cell[,] board = new Cell[36,36];
 
   public Grid() {
     for(int i =0; i<board.GetLength(0); i++) {
@@ -16,7 +15,6 @@ public class Grid {
   public void setCell(int xPos, int yPos, bool isAlive) { //Made as a shorthand method to set the array value
     board[xPos, yPos].alive = isAlive;
   }
-
 
 
   public int getAdjacent(int xPos, int yPos, bool isAlive) { //This method looks for all squares with the given life value in a 3x3 around the position
