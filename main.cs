@@ -7,13 +7,14 @@ class MainClass {
     Display display = new Display(grid);
     Presets prst = new Presets(grid);
 
-    int AutoTick = 500; // Automatically advance the generation every set period of time. Setting it to 0 requires manual input.
+    int AutoTick = 750; // Automatically advance the generation every set period of time. Setting it to 0 requires manual input.
 
     //Create a pattern here. Origin is top left.
     prst.pentadecathlon(17, 3);
-    prst.random(0, 18, 36, 18);
+    // prst.random(0, 18, 36, 18);
     prst.t(5, 7);
-
+    prst.cloverleaf(20,20);
+    prst.spaceship(9,13);
     display.show(); //Displays the grid 
 
     while(true) {
@@ -22,12 +23,14 @@ class MainClass {
         input = Console.ReadLine();
 
         while(input != "") {
-          string[] w = input.Split(",");
-          int x = Int32.Parse(w[0]);
-          int y = Int32.Parse(w[1]);
+          try { //Program errors when you spam enter, this exists to stop that.
+            string[] w = input.Split(",");
+            int x = Int32.Parse(w[0]);
+            int y = Int32.Parse(w[1]);
 
-          grid.setCell(y, x, !grid.board[y, x].alive);
-          display.show();
+            grid.setCell(y, x, !grid.board[y, x].alive);
+            display.show();
+          } catch {}
           input = Console.ReadLine();
         }
       } else {
