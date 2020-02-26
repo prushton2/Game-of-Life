@@ -14,3 +14,4 @@ See also: [wiki page](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 Runs on vanilla C#
 
 You can set custom starting points with grid.setCell(xPos, yPos, true);
+Preset patterns are stores in Presets.cs, The instance in main is prst.

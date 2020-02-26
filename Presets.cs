@@ -1,7 +1,9 @@
 using System;
 class Presets {
+  
   Random gen = new Random();
   private Grid grid;
+
   public Presets(Grid grid) {
     this.grid = grid;
   }
