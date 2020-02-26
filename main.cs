@@ -7,11 +7,11 @@ class MainClass {
     Display display = new Display(grid);
     Presets prst = new Presets(grid);
 
-    int AutoTick = 0; // Automatically advance the generation every set period of time. Setting it to 0 requires manual input.
+    int AutoTick = 500; // Automatically advance the generation every set period of time. Setting it to 0 requires manual input.
 
     //Create a pattern here. Origin is top left.
     prst.pentadecathlon(17, 3);
-    // prst.random(0, 30, 36, 6);
+    prst.random(0, 18, 36, 18);
     prst.t(5, 7);
 
     display.show(); //Displays the grid 

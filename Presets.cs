@@ -8,30 +8,23 @@ class Presets {
     this.grid = grid;
   }
   public void pentadecathlon(int xoffset, int yoffset) {
-    grid.setCell(yoffset+0, xoffset+1, true);
-    grid.setCell(yoffset+1, xoffset+1, true);
-
-    grid.setCell(yoffset+2, xoffset+0, true);
-    grid.setCell(yoffset+2, xoffset+2, true);
-    
-    grid.setCell(yoffset+3, xoffset+1, true);
-    grid.setCell(yoffset+4, xoffset+1, true);
-    grid.setCell(yoffset+5, xoffset+1, true);
-    grid.setCell(yoffset+6, xoffset+1, true);
-    
-    grid.setCell(yoffset+7, xoffset+0, true);
-    grid.setCell(yoffset+7, xoffset+2, true);
-
-    grid.setCell(yoffset+8, xoffset+1, true);
-    grid.setCell(yoffset+9, xoffset+1, true);
+    int[,] posArray = new int[,] {
+      {0, 1}, {1, 1}, {2, 0}, {2, 2}, {3, 1}, {4, 1},
+      {5, 1}, {6, 1}, {7, 0}, {7, 2}, {8, 1}, {9, 1}
+    };
+    for(int i = 0; i<posArray.GetLength(0); i++) {
+      grid.setCell(yoffset+posArray[i, 0], xoffset+posArray[i, 1], true);
+    }
 
   }
 
   public void t(int xoffset, int yoffset) {
-    grid.setCell(yoffset+0, xoffset+0, true);
-    grid.setCell(yoffset+0, xoffset+1, true);
-    grid.setCell(yoffset+0, xoffset+2, true);
-    grid.setCell(yoffset+1, xoffset+1, true);
+    int[,] posArray = new int[,] {
+      {0, 0}, {0, 1}, {0, 2}, {1, 1}
+    };
+    for(int i = 0; i<posArray.GetLength(0); i++) {
+      grid.setCell(yoffset+posArray[i, 0], xoffset+posArray[i, 1], true);
+    }
   }
 
   public void random(int xoffset, int yoffset, int xsize, int ysize) {
